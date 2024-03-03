@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VirtualShop.ProdctAPI.Context;
-using VirtualShop.ProdctAPI.Models;
+using VirtualShop.ProductAPI.Context;
+using VirtualShop.ProductAPI.Models;
 
-namespace VirtualShop.ProdctAPI.Repositories;
+namespace VirtualShop.ProductAPI.Repositories;
 
 public class ProductRepository : IProductRepository
 {
@@ -18,11 +18,7 @@ public class ProductRepository : IProductRepository
         return await _dbContext.Products.ToListAsync();
     }
 
-    public async Task<Product> GetProductById(int id)
-    {
-        return await _dbContext.Products.Where(c => c.Id == id).FirstOrDefaultAsync();
-    }
-
+   
     public async Task<Product> Create(Product Product)
     {
         _dbContext.Products.Add(Product);
@@ -46,5 +42,10 @@ public class ProductRepository : IProductRepository
         return Product;
 
 
+    }
+
+    public async Task<Product> GetProductById(int id)
+    {
+        return await _dbContext.Products.Where(c => c.Id == id).FirstOrDefaultAsync();
     }
 }

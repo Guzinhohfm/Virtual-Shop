@@ -1,6 +1,6 @@
-﻿using VirtualShop.ProdctAPI.Models;
+﻿using VirtualShop.ProductAPI.Models;
 
-namespace VirtualShop.ProdctAPI.Repositories;
+namespace VirtualShop.ProductAPI.Repositories;
 
 public interface ICategoryRepository
 {

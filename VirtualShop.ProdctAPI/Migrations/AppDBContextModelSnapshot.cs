@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VirtualShop.ProdctAPI.Context;
+using VirtualShop.ProductAPI.Context;
 
 #nullable disable
 
-namespace VirtualShop.ProdctAPI.Migrations
+namespace VirtualShop.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDBContext))]
     partial class AppDBContextModelSnapshot : ModelSnapshot

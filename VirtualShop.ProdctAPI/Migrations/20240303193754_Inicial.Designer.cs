@@ -3,11 +3,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using VirtualShop.ProdctAPI.Context;
+using VirtualShop.ProductAPI.Context;
 
 #nullable disable
 
-namespace VirtualShop.ProdctAPI.Migrations
+namespace VirtualShop.ProductAPI.Migrations
 {
     [DbContext(typeof(AppDBContext))]
     [Migration("20240303193754_Inicial")]

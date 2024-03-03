@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using VirtualShop.ProdctAPI.Models;
+using VirtualShop.ProductAPI.Models;
 
-namespace VirtualShop.ProdctAPI.DTOs;
+namespace VirtualShop.ProductAPI.DTOs;
 
 public class ProductDTO
 {

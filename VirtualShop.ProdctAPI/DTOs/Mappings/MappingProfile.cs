@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using VirtualShop.ProdctAPI.Models;
+using VirtualShop.ProductAPI.Models;
 
-namespace VirtualShop.ProdctAPI.DTOs.Mappings;
+namespace VirtualShop.ProductAPI.DTOs.Mappings;
 
 public class MappingProfile: Profile
 {

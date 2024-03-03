@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using VirtualShop.ProdctAPI.Models;
+using VirtualShop.ProductAPI.Models;
 
-namespace VirtualShop.ProdctAPI.Context;
+namespace VirtualShop.ProductAPI.Context;
 
 public class AppDBContext : DbContext
 {
