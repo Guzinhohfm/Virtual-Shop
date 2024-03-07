@@ -20,7 +20,7 @@ public class CategoryRepository : ICategoryRepository
 
     public async Task<Category> GetCategoryById(int id)
     {
-        return await _dbContext.Categories.Where(c => c.Id == id).FirstOrDefaultAsync();
+        return await _dbContext.Categories.Where(c => c.CategoryId == id).FirstOrDefaultAsync();
     }
 
     public async Task<IEnumerable<Category>> GetCategoriesProducts()

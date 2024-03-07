@@ -15,7 +15,7 @@ public class AppDBContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Category>().HasKey(c => c.Id);
+        modelBuilder.Entity<Category>().HasKey(c => c.CategoryId);
 
         modelBuilder.Entity<Category>().
             Property(c => c.Name).HasMaxLength(100).IsRequired();
@@ -44,12 +44,12 @@ public class AppDBContext : DbContext
             .HasData(
                 new Category
                 {
-                    Id = 1,
+                    CategoryId = 1,
                     Name = "Material Escolar",
                 },
                 new Category
                 {
-                    Id = 2,
+                    CategoryId = 2,
                     Name = "Acessórios",
                 }
             );

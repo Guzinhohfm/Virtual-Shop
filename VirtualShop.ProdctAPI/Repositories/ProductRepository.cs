@@ -15,7 +15,7 @@ public class ProductRepository : IProductRepository
 
     public async Task<IEnumerable<Product>> GetAll()
     {
-        return await _dbContext.Products.ToListAsync();
+        return await _dbContext.Products.Include(c=> c.Category).ToListAsync();
     }
 
    
@@ -46,6 +46,6 @@ public class ProductRepository : IProductRepository
 
     public async Task<Product> GetProductById(int id)
     {
-        return await _dbContext.Products.Where(c => c.Id == id).FirstOrDefaultAsync();
+        return await _dbContext.Products.Include(c=>c.Category).Where(c => c.Id == id).FirstOrDefaultAsync();
     }
 }

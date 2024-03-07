@@ -18,9 +18,9 @@ namespace VirtualShop.ProductAPI.Migrations
                 .HasAnnotation("ProductVersion", "7.0.16")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("VirtualShop.ProdctAPI.Models.Category", b =>
+            modelBuilder.Entity("VirtualShop.ProductAPI.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
@@ -29,24 +29,24 @@ namespace VirtualShop.ProductAPI.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.HasKey("Id");
+                    b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
 
                     b.HasData(
                         new
                         {
-                            Id = 1,
+                            CategoryId = 1,
                             Name = "Material Escolar"
                         },
                         new
                         {
-                            Id = 2,
+                            CategoryId = 2,
                             Name = "Acessórios"
                         });
                 });
 
-            modelBuilder.Entity("VirtualShop.ProdctAPI.Models.Product", b =>
+            modelBuilder.Entity("VirtualShop.ProductAPI.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -84,9 +84,9 @@ namespace VirtualShop.ProductAPI.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("VirtualShop.ProdctAPI.Models.Product", b =>
+            modelBuilder.Entity("VirtualShop.ProductAPI.Models.Product", b =>
                 {
-                    b.HasOne("VirtualShop.ProdctAPI.Models.Category", "Category")
+                    b.HasOne("VirtualShop.ProductAPI.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -95,7 +95,7 @@ namespace VirtualShop.ProductAPI.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("VirtualShop.ProdctAPI.Models.Category", b =>
+            modelBuilder.Entity("VirtualShop.ProductAPI.Models.Category", b =>
                 {
                     b.Navigation("Products");
                 });

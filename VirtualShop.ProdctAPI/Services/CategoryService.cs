@@ -7,7 +7,7 @@ namespace VirtualShop.ProductAPI.Services;
 
 public class CategoryService : ICategoryService
 {
-    private ICategoryRepository _categoryRepository;
+    private readonly ICategoryRepository _categoryRepository;
 
     private readonly IMapper _mapper;
 
@@ -44,7 +44,7 @@ public class CategoryService : ICategoryService
     {
         var categoryEntity = _mapper.Map<Category>(categoryDTO);
         await _categoryRepository.Create(categoryEntity);
-        categoryDTO.Id = categoryEntity.Id;
+        categoryDTO.Id = categoryEntity.CategoryId;
     }
 
     public async Task UpdateCategory(CategoryDTO categoryDTO)
@@ -56,7 +56,7 @@ public class CategoryService : ICategoryService
     public async Task DeleteCategory(int id)
     {
         var categoryEntity = _categoryRepository.GetCategoryById(id).Result;
-        await _categoryRepository.Delete(categoryEntity.Id);
+        await _categoryRepository.Delete(categoryEntity.CategoryId);
     }
 
     

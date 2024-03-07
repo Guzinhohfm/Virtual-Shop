@@ -10,9 +10,9 @@ namespace VirtualShop.ProductAPI.Controllers;
 public class CategoriesController : ControllerBase
 {
    
-    private readonly CategoryService _categoryService;
+    private readonly ICategoryService _categoryService;
 
-    public CategoriesController(CategoryService categoryService)
+    public CategoriesController(ICategoryService categoryService)
     {
         _categoryService = categoryService;
     }
@@ -20,7 +20,7 @@ public class CategoriesController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<IEnumerable<CategoryDTO>>> GetCategories()
     {
-        var categoriesDTO =  _categoryService.GetCategories();
+        var categoriesDTO =  await _categoryService.GetCategories();
         if (categoriesDTO == null)
             return NotFound("Categories not found");
 
@@ -31,7 +31,7 @@ public class CategoriesController : ControllerBase
     [HttpGet("products")]
     public async Task<ActionResult<IEnumerable<CategoryDTO>>> GetCategoriesProducts()
     {
-        var categoriesDTO = _categoryService.GetCategoriesProduct();
+        var categoriesDTO = await _categoryService.GetCategoriesProduct();
         if (categoriesDTO == null)
             return NotFound("Categories not found");
 
@@ -42,7 +42,7 @@ public class CategoriesController : ControllerBase
     [HttpGet("{id}", Name = "GetCategory")]
     public async Task<ActionResult<IEnumerable<CategoryDTO>>> GetById(int id)
     {
-        var categoriesDTO = _categoryService.GetCategoryById(id);
+        var categoriesDTO = await _categoryService.GetCategoryById(id);
         if (categoriesDTO == null)
             return NotFound("Categories not found");
 

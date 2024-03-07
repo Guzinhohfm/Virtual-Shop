@@ -9,9 +9,9 @@ namespace VirtualShop.ProductAPI.Controllers;
 [ApiController]
 public class ProductsController : ControllerBase
 {
-    private readonly ProductService _productService;
+    private readonly IProductService _productService;
 
-    public ProductsController(ProductService productService)
+    public ProductsController(IProductService productService)
     {
         _productService = productService;
     }
@@ -48,7 +48,7 @@ public class ProductsController : ControllerBase
 
         await _productService.AddProduct(productDTO);
 
-        return new CreatedAtRouteResult("GetProduct", 
+        return new CreatedAtRouteResult("GetProducts", 
             new {id = productDTO.Id}, productDTO);
     }
 
